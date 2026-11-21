@@ -6,7 +6,7 @@
 - *Stretching the corners of media materials,*
 - <img width="3840" height="2071" alt="image" src="https://github.com/user-attachments/assets/8c2f3bf6-1197-4256-898b-8426fba53689" />
 - *Adding cool effects like pixelization, outline, shadow, light and etc.*
-- <img width="3840" height="2071" alt="image" src="https://github.com/user-attachments/assets/8c2f3bf6-1197-4256-898b-8426fba53689" />
+- <img width="3840" height="2088" alt="image" src="https://github.com/user-attachments/assets/68a561c8-b632-4dbe-880b-47af0d5ed7d9" />
 - *And making previews for youtube, tiktok, shorts and more.*
 - <img width="3840" height="2110" alt="image" src="https://github.com/user-attachments/assets/3988ac94-be7b-47f6-9eb5-c0f3667aab84" />
 

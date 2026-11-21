@@ -1,16 +1,25 @@
-# CapCut-Wiggle
+# Установщик CapCut Wiggle
 
-**An app that can make capcut video editing better! Adds a bunch features like:**
-- *Procedural generation of wiggle for media materials or texts*
-- <img width="3840" height="2077" alt="image" src="https://github.com/user-attachments/assets/24863023-0e38-4049-b961-c8206e380156" />
-- *Stretching the corners of media materials,*
-- <img width="3840" height="2071" alt="image" src="https://github.com/user-attachments/assets/8c2f3bf6-1197-4256-898b-8426fba53689" />
-- *Adding cool effects like pixelization, outline, shadow, light and etc.*
-- <img width="3840" height="2088" alt="image" src="https://github.com/user-attachments/assets/68a561c8-b632-4dbe-880b-47af0d5ed7d9" />
-- *And making previews for youtube, tiktok, shorts and more.*
-- <img width="3840" height="2110" alt="image" src="https://github.com/user-attachments/assets/3988ac94-be7b-47f6-9eb5-c0f3667aab84" />
+Один `.exe` на Go без сторонних библиотек: своё окно в стиле Wiggle, установка в
+`%LOCALAPPDATA%\Programs\CapCut Wiggle` без прав администратора, ярлыки на рабочем столе и в «Пуск»,
+запись в «Приложения» Windows и удаление оттуда же.
 
+Что делает при установке:
+1. Скачивает свежую программу из последнего релиза
+   `https://github.com/Dmeon777/CapCut-Wiggle/releases/latest/download/capcut-wiggle.zip`.
+   Нет интернета или файла — ставит копию, вшитую в установщик (`app.zip`).
+2. Скачивает встроенный Python 3.12 с python.org (если его ещё нет в папке программы).
+3. Распаковывает, создаёт ярлыки, кладёт `uninstall.exe` и пишет программу в «Приложения».
 
-**How it works?**
-- *You editing the material, hit the button "Apply" (Рендер и замена/Добавить рысканье) and it says you to close app, after closing the capcut forces you on a projects page and you need to wait 1-4 seconds for wiggle to apply the changes. After this you entering your project and see the results!*
-- *It works with project draft file, not with capcut, it cant do any changes while capcut is working.*
+Важно для релизов: файл в релизе должен называться `capcut-wiggle.zip`, внутри — `app.py` и остальные файлы
+программы (можно в подпапке).
+
+Сборка: `build.sh` (Linux/WSL) или `build.bat` (Windows, нужен Go). Новая вшитая копия — замени `app.zip`.
+
+| Файл | Что это |
+|---|---|
+| `main_windows.go` | Точка входа: установка или `/uninstall` |
+| `ui_windows.go`, `layout.go`, `draw.go`, `text_windows.go` | Окно, экраны, отрисовка |
+| `install_windows.go`, `archive.go`, `shell_windows.go` | Установка, удаление, ярлыки, реестр |
+| `win_windows.go` | Вызовы Win32 |
+| `mksyso.py`, `setup.manifest`, `rsrc_windows_amd64.syso` | Иконка и манифест внутри `.exe` |
